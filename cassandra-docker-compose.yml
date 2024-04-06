@@ -1,0 +1,16 @@
+version: '3'
+services:
+  wso2si:
+    image: cassandra:4.0.12
+    hostname: cassandra
+    container_name: cassandra
+    ports:
+      - "9042:9042"
+    volumes:
+      - /home/gcpuser/elk/cassandra/asia/cassandra.yaml:/etc/cassandra/cassandra.yaml
+    networks:
+      - local
+
+networks:
+  local:
+    driver: bridge

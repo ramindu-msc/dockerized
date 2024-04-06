@@ -26,7 +26,7 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
       ALLOW_ANONYMOUS_LOGIN: yes
     networks:
-      - kafka
+      - local
 
   kafka:
     image: bitnami/kafka:3.0.0
@@ -53,7 +53,7 @@ services:
       ALLOW_PLAINTEXT_LISTENER: yes
       KAFKA_JMX_HOSTNAME: localhost
     networks:
-      - kafka
+      - local
 
 networks:
   kafka:
