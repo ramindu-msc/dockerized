@@ -1,0 +1,25 @@
+version: '3'
+services:
+  filebeat:
+    container_name: filebeat
+    image: elastic/filebeat:7.9.1
+    volumes:
+      - ~/elk-config/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
+    command: ["--strict.perms=false"]
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    stdin_open: true
+    tty: true
+    networks:
+      - elk
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "50"
+
+networks:
+  elk:
+    driver: bridge
