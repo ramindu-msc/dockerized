@@ -1,7 +1,7 @@
 version: '3'
 services:
   wso2si:
-    image: docker.wso2.com/wso2si:4.2.0
+    image: wso2/wso2si:4.2.0
     hostname: wso2si
     container_name: wso2si
     ports:
