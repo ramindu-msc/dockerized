@@ -4,7 +4,7 @@ services:
     container_name: filebeat
     image: elastic/filebeat:7.9.1
     volumes:
-      - ~/elk-config/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
+      - ${HOME}/elk/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
     command: ["--strict.perms=false"]
     ulimits:
       memlock:
