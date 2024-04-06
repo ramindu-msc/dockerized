@@ -24,6 +24,8 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - kafka
   kafka:
     image: bitnami/kafka:3.0.0
     hostname: broker
@@ -44,4 +46,12 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       KAFKA_JMX_PORT: 9101
+      ALLOW_ANONYMOUS_LOGIN: yes
+      ALLOW_PLAINTEXT_LISTENER: yes
       KAFKA_JMX_HOSTNAME: localhost
+    networks:
+      - kafka
+
+networks:
+  kafka:
+    driver: bridg
