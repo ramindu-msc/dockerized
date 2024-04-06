@@ -42,6 +42,10 @@ services:
     depends_on:
       - elasticsearch
 
+networks:
+  elk2:
+    driver: bridge
+
 volumes:
   elastic_data:
   ls_data:
