@@ -6,7 +6,6 @@ services:
     container_name: wso2si
     ports:
       - "9443:9443"
-    environment:
     volumes:
       - /home/gcpuser/si/asia/siddhi-apps:/home/wso2carbon/wso2si-4.2.0/wso2/server/deployment/siddhi-files
       - /home/gcpuser/si/asia/deployment.toml:/home/wso2carbon/wso2si-4.2.0/conf/server/deployment.toml
