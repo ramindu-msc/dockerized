@@ -4,10 +4,6 @@ services:
     user: root
     container_name: filebeat
     image: filebeat:8.12.2
-    links:
-      - logstash:logstash
-    depends_on:
-      - logstash
     volumes:
       - /var/run/docker.sock:/host_docker/docker.sock
       - /var/lib/docker:/host_docker/var/lib/docker
