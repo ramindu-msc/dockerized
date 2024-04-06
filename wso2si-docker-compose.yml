@@ -1,6 +1,6 @@
 version: '3'
 services:
-  zookeeper:
+  wso2si:
     image: docker.wso2.com/wso2si:4.2.0
     hostname: wso2si
     container_name: wso2si
