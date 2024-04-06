@@ -3,7 +3,7 @@ services:
   filebeat:
     user: root
     container_name: filebeat
-    image: filebeat:8.12.2
+    image: elastic/filebeat:8.12.2
     volumes:
       - /var/run/docker.sock:/host_docker/docker.sock
       - /var/lib/docker:/host_docker/var/lib/docker
