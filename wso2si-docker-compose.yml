@@ -7,9 +7,9 @@ services:
     ports:
       - "9443:9443"
     volumes:
-      - /home/gcpuser/si/asia/siddhi-apps:/home/wso2carbon/wso2si-4.2.0/wso2/server/deployment/siddhi-files
-      - /home/gcpuser/si/asia/deployment.toml:/home/wso2carbon/wso2si-4.2.0/conf/server/deployment.toml
-      - /home/gcpuser/si/lib:/home/wso2carbon/wso2si-4.2.0/lib
+      - /home/gcpuser/elk/si/asia/siddhi-apps:/home/wso2carbon/wso2si-4.2.0/wso2/server/deployment/siddhi-files
+      - /home/gcpuser/elk/si/asia/deployment.toml:/home/wso2carbon/wso2si-4.2.0/conf/server/deployment.toml
+      - /home/gcpuser/elk/si/lib:/home/wso2carbon/wso2si-4.2.0/lib
     networks:
       - kafka
 
