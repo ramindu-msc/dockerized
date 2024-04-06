@@ -12,3 +12,7 @@ services:
       - /home/gcpuser/si/lib:/home/wso2carbon/wso2si-4.2.0/lib
     networks:
       - kafka
+
+networks:
+  kafka:
+    driver: bridge
