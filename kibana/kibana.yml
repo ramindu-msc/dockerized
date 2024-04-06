@@ -163,7 +163,7 @@ server.host: "0.0.0.0"
 
 
 # This section was automatically generated during setup.
-elasticsearch.hosts: ['http://35.200.195.206:9200']
+elasticsearch.hosts: ['http://elasticsearch:9200']
 # elasticsearch.serviceAccountToken: eyJ2ZXIiOiI4LjEuMyIsImFkciI6WyIxMC4xMDAuNy4xMTY6OTIwMCJdLCJmZ3IiOiJiNmNlZTdjOGZmY2I4YjY4NjAyNjAxNmYyZTc4Mjc2NzY5ZmM1MDY4YjAzZTY0OTc4ZDE2MTVjNjNjNWJhMDg3Iiwia2V5IjoiQ0l0TzBJMEJQLUdsZ0JHQjNoYzA6TXZIOHRUeHhTQVdjYmVKLXBKczJ2QSJ9
 # elasticsearch.ssl.certificateAuthorities: [/Users/ramindu/wso2/general_demo/ELK/kibana-8.1.3/data/ca_1691515728247.crt]
 # xpack.fleet.outputs: [{id: fleet-default-output, name: default, is_default: true, is_default_monitoring: true, type: elasticsearch, hosts: ['https://10.100.7.116:9200'], ca_trusted_fingerprint: b6cee7c8ffcb8b686026016f2e78276769fc5068b03e64978d1615c63c5ba087}]
