@@ -12,7 +12,7 @@ services:
       - elastic_data:/usr/share/elasticsearch/data/
       - /home/gcpuser/elk/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     networks:
-      - elk
+      - elk2
 
   logstash:
     image: logstash:8.12.2
@@ -24,9 +24,8 @@ services:
       - /home/gcpuser/elk/logstash/logstash-sample.conf:/usr/share/logstash/pipeline/logstash.conf
       - /home/gcpuser/elk/logstash/logstash.yml:/usr/share/logstash/config/logstash.yml
       - ls_data:/usr/share/logstash/data
-
     networks:
-      - elk
+      - elk2
     depends_on:
       - elasticsearch
 
@@ -39,13 +38,9 @@ services:
       - /home/gcpuser/elk/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
       - kb_data:/usr/share/kibana/data
     networks:
-      - elk
+      - elk2
     depends_on:
       - elasticsearch
-
-networks:
-  elk:
-    driver: bridge
 
 volumes:
   elastic_data:
