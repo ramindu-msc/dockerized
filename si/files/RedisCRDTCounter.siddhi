@@ -1,0 +1,66 @@
+@App:name("RedisCRDTCounter")
+
+@App:description("Description of the plan")
+
+define table ServerStatusTable (serverName int, started bool);
+
+
+@source(type='kafka',
+        topic.list='kafka_topic',
+        threading.option='single.thread',
+        group.id="group3",
+        bootstrap.servers='localhost:9092',
+        @map(type='json'))
+define stream SweetProductionStream (name string, amount double);
+
+@source(type='kafka',
+        topic.list='schedule',
+        threading.option='single.thread',
+        group.id="group3",
+        bootstrap.servers='localhost:9092',
+        @map(type='json'))
+define stream SchedulerStartThread (key string);
+
+@source(type = 'http', receiver.url = "http://localhost:5006/StudentRegistrationEP",
+    @map(type = 'json'))
+define stream TemperatureHumidityStream (name string, amount double);
+
+@sink(
+    type='kafka',
+    topic='schedule',
+    bootstrap.servers='35.200.221.233:9092',
+    @map(type='json'))
+define stream Scheduler_1_StartThread (key string);
+
+define trigger every10SecTriggerStream at '0 0/1 * 1/1 * ? *';
+
+define trigger startTrigger at 'start';
+
+
+from SchedulerStartThread#log("Other server started !!")
+select key as type
+insert into CRDTStream;
+
+from startTrigger#log("This server started !!")
+select 'schedule' as key
+insert into Scheduler_1_StartThread;
+
+from SweetProductionStream
+select "incr" as type
+insert into CRDTStream;
+
+from TemperatureHumidityStream#log("Received event2 !")
+select *
+insert into IgnoreStream2;
+
+from CRDTStream
+select crdt:cassandracount("key1", true, type, "LOCAL_COUNTS") as optimizedCount
+insert into ThrottleStream;
+
+from every10SecTriggerStream
+select crdt:cassandracount("key1", true, "get", "LOCAL_COUNTS") as optimizedCount
+insert into LoggerStream;
+
+from LoggerStream#log("10 seconds trigger for optimized value: ")
+select optimizedCount
+insert into IgnoreStream;

@@ -8,6 +8,9 @@ services:
       - "8443:8443"
       - "9443:9443"
       - "12000:12000"
+    # dns:
+    #   - 8.8.8.8
+    #   - 127.0.0.11
     # volumes:
     #   - elastic_data:/usr/share/elasticsearch/data/
     #   - /home/gcpuser/elk/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
