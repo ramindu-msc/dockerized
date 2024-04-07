@@ -8,7 +8,7 @@ services:
       - "9443:9443"
     volumes:
       - /home/gcpuser/dockerized/si/files/siddhi-apps:/home/wso2carbon/wso2si-4.2.0/wso2/server/deployment/siddhi-files
-      - /home/gcpuser/dockerized/si/files/deployment.toml:/home/wso2carbon/wso2si-4.2.0/conf/server/deployment.toml
+      - /home/gcpuser/dockerized/si/files/deployment.yaml:/home/wso2carbon/wso2si-4.2.0/conf/server/deployment.yaml
       - /home/gcpuser/dockerized/si/lib:/home/wso2carbon/wso2si-4.2.0/lib
       - /home/gcpuser/wso2carbon-logs:/home/wso2carbon/wso2si-4.2.0/wso2/server/logs
     networks:
