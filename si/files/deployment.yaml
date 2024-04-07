@@ -436,12 +436,12 @@ siddhi:
         name: cassandracount
         namespace: crdt
         properties:
-          region.name: asia
-          other.region.name: us
-          cassandra.host: 10.160.0.5
+          region.name: us
+          other.region.name: asia
+          cassandra.host: 10.182.0.2
           cassandra.port: 9042
           cassandra.password: admin
-          cassandra.remoteLocal.host: 10.182.0.6
+          cassandra.remoteLocal.host: 10.160.0.2
           cassandra.remoteLocal.port: 9042
           cassandra.remoteLocal.password: admin
     -
