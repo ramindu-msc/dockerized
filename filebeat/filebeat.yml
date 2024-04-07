@@ -22,7 +22,7 @@ filebeat.inputs:
 -   type: log
     enabled: true
     paths:
-        - /home/gcpuser/wso2si-4.2.0/wso2/server/logs/carbon.log
+        - /usr/share/filebeat/mylog
     include_lines: ['(toELK)']
 
 # ============================== Filebeat modules ==============================
