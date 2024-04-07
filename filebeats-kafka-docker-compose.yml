@@ -56,5 +56,5 @@ services:
       - local
 
 networks:
-  kafka:
+  local:
     driver: bridge
