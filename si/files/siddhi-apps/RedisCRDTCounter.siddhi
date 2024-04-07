@@ -28,7 +28,7 @@ define stream TemperatureHumidityStream (name string, amount double);
 @sink(
     type='kafka',
     topic='schedule',
-    bootstrap.servers='34.16.176.20:9092',
+    bootstrap.servers='10.182.0.2:9092',
     @map(type='json'))
 define stream Scheduler_1_StartThread (key string);
 
