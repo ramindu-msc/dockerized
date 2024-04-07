@@ -1,6 +1,6 @@
 version: '3'
 services:
-  wso2si:
+  cassandra:
     image: cassandra:4.0.12
     hostname: cassandra
     container_name: cassandra
