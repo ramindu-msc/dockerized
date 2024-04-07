@@ -1,0 +1,24 @@
+version: '3'
+services:
+  wso2si:
+    image: redislabs/redis
+    hostname: redis
+    container_name: redis
+    ports:
+      - "8443:8443"
+      - "9443:9443"
+      - "12000:12000"
+    # volumes:
+    #   - elastic_data:/usr/share/elasticsearch/data/
+    #   - /home/gcpuser/elk/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    # environment:
+    #   # - CASSANDRA_LISTEN_ADDRESS=10.160.0.2
+    #   # - CASSANDRA_RPC_ADDRESS=10.160.0.2
+    #   - CASSANDRA_SEEDS=34.93.62.229
+    #   - CASSANDRA_BROADCAST_ADDRESS=34.125.35.63
+    networks:
+      - local
+
+networks:
+  local:
+    driver: bridge
