@@ -9,7 +9,7 @@ define table ServerStatusTable (serverName int, started bool);
         topic.list='kafka_topic',
         threading.option='single.thread',
         group.id="group3",
-        bootstrap.servers='localhost:9092',
+        bootstrap.servers='10.160.0.2:9092',
         @map(type='json'))
 define stream SweetProductionStream (name string, amount double);
 
@@ -17,7 +17,7 @@ define stream SweetProductionStream (name string, amount double);
         topic.list='schedule',
         threading.option='single.thread',
         group.id="group3",
-        bootstrap.servers='localhost:9092',
+        bootstrap.servers='10.160.0.2:9092',
         @map(type='json'))
 define stream SchedulerStartThread (key string);
 
