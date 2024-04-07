@@ -10,3 +10,7 @@ curl -SL https://github.com/docker/compose/releases/download/v2.3.3/docker-compo
 chmod +x ~/.docker/cli-plugins/docker-compose
 docker compose version
 echo "Installed docker compose."
+cd /home/gcpuser/
+mkdir wso2carbon-logs
+cd wso2carbon-logs
+touch carbon.log
