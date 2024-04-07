@@ -9,7 +9,7 @@ services:
       - /var/lib/docker:/host_docker/var/lib/docker
       - /home/gcpuser/wso2carbon-logs/carbon.log:/usr/share/filebeat/mylog
       - /home/gcpuser/dockerized/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
-    command: ["--strict.perms=false"]
+    command: filebeat -e -strict.perms=false
     stdin_open: true
     network_mode: bridge
     deploy:
