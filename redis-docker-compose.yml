@@ -11,7 +11,7 @@ services:
       - "9443:9443"
       - "12000:12000"
     volumes:
-      - /home/gcpuser/dockerized/si/resolv.conf:/etc/resolv.conf
+      - /home/gcpuser/dockerized/redis/resolv.conf:/etc/resolv.conf
     # volumes:
     #   - elastic_data:/usr/share/elasticsearch/data/
     #   - /home/gcpuser/elk/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
