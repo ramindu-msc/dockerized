@@ -11,7 +11,7 @@ services:
       - "9443:9443"
       - "12000:12000"
     volumes:
-      - /home/gcpuser/dockerized/si/resolv.conf:/etc/resolv.conf
+      - /home/gcpuser/dockerized/redis/resolv.conf:/etc/resolv.conf
     # dns:
     #   - 8.8.8.8
     #   - 127.0.0.11
