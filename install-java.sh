@@ -1,10 +1,20 @@
-sudo apt install default-jdk -y
-sudo update-alternatives --config java 
-java_home=$(sudo update-alternatives --config java | grep 'java' | awk '{print $3}')
-# Append JAVA_HOME setting to /etc/profile
-echo "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/" | sudo tee -a /etc/profile > /dev/null
-# Append JAVA_HOME/bin to the PATH variable in /etc/profile
-echo "export PATH=\$JAVA_HOME/bin:\$PATH" | sudo tee -a /etc/profile > /dev/null
-# Source the /etc/profile to apply changes
+#!/bin/bash
+
+# Update package lists
+sudo apt update
+
+# Install OpenJDK
+sudo apt install openjdk-11-jdk -y
+
+# Get the installation path of OpenJDK
+JAVA_PATH=$(update-alternatives --query java | grep 'Value: ' | grep -o '/.*/bin/java')
+
+# Set JAVA_HOME in /etc/profile
+echo "export JAVA_HOME=$JAVA_PATH" | sudo tee -a /etc/profile
+
+# Load the environment variables
 source /etc/profile
-echo "Java home set to: $java_home"
+
+# Verify installation and JAVA_HOME configuration
+java -version
+echo "JAVA_HOME is set to: $JAVA_HOME"
