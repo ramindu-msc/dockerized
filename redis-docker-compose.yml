@@ -1,7 +1,9 @@
 version: '3'
 services:
   redis:
-    image: redis
+    image: redislabs/redis
+    cap_add:
+      - sys_resource
     hostname: redis
     container_name: redis
     ports:
