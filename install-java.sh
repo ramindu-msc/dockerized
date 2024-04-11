@@ -1,4 +1,5 @@
 sudo apt install default-jdk -y
+sudo update-alternatives --config java 
 java_home=$(sudo update-alternatives --config java | grep 'java' | awk '{print $3}')
 # Append JAVA_HOME setting to /etc/profile
 echo "export JAVA_HOME=$java_home" | sudo tee -a /etc/profile > /dev/null
