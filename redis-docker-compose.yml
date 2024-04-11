@@ -4,10 +4,6 @@ services:
     image: redis
     hostname: redis
     container_name: redis
-    ports:
-      - "8443:8443"
-      - "9443:9443"
-      - "12000:12000"
     # dns:
     #   - 8.8.8.8
     #   - 127.0.0.11
