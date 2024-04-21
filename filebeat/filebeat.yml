@@ -111,7 +111,7 @@ setup.kibana:
 # ------------------------------ Logstash Output -------------------------------
 output.logstash:
   # The Logstash hosts
-  hosts: ["34.93.13.57:5044"]
+  hosts: ["35.200.167.84:5044"]
   #output.logstash:
   # The Logstash hosts
   #hosts: ["localhost:5044"]
