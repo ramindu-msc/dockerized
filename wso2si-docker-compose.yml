@@ -12,6 +12,7 @@ services:
       - /home/gcpuser/dockerized/si/lib:/home/wso2carbon/wso2si-4.2.0/lib
       - /home/gcpuser/dockerized/si/plugins:/home/wso2carbon/wso2si-4.2.0/wso2/lib/plugins
       - /home/gcpuser/wso2carbon-logs:/home/wso2carbon/wso2si-4.2.0/wso2/server/logs
+    user: wso2carbon
     networks:
       - local
 
