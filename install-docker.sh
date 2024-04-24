@@ -13,3 +13,5 @@ echo "Installed docker compose."
 cd /home/gcpuser/
 mkdir wso2carbon-logs
 chmod -R a+rwX wso2carbon-logs/
+cd wso2carbon-logs
+touch carbon.log
