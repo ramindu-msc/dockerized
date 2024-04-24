@@ -13,7 +13,7 @@ echo "Installed docker compose."
 cd /home/gcpuser/
 mkdir wso2carbon-logs
 chmod -R a+rwX wso2carbon-logs/
+chmod -R ugo+rw wso2carbon-logs/
 cd wso2carbon-logs
 touch carbon.log
 sudo docker pull ramilu90/wso2si:4.2.0
-# docker run -v /host/data:/container/data -u wso2carbon ramilu90/wso2si:4.2.0
