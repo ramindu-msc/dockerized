@@ -1,0 +1,2 @@
+[2024-03-11 07:52:42,735] INFO Expiring session 0x1002525bd8b0001, timeout of 18000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
+[2024-03-11 07:52:44,703] INFO Invalid session 0x1002525bd8b0001 for client /127.0.0.1:64815, probably expired (org.apache.zookeeper.server.ZooKeeperServer)

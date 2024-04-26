@@ -1,0 +1,2 @@
+[2023-07-02 19:41:09,318] INFO Starting the log cleaner (kafka.log.LogCleaner)
+[2023-07-02 19:41:09,363] INFO [kafka-log-cleaner-thread-0]: Starting (kafka.log.LogCleaner)
