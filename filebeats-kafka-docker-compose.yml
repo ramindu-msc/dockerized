@@ -7,7 +7,7 @@ services:
     volumes:
       - /var/run/docker.sock:/host_docker/docker.sock
       - /var/lib/docker:/host_docker/var/lib/docker
-      - /home/gcpuser/wso2carbon-logs/carbon.log:/usr/share/filebeat/mylog
+      - /home/gcpuser/wso2carbon-logs/carbon.log:/usr/share/filebeat/mylog/carbon.log
       - /home/gcpuser/dockerized/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
     command: filebeat -e -strict.perms=false
     stdin_open: true
