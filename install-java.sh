@@ -8,9 +8,11 @@ sudo apt install openjdk-11-jdk -y
 
 # Get the installation path of OpenJDK
 JAVA_PATH=$(update-alternatives --query java | grep 'Value: ' | grep -o '/.*/bin/java')
+JAVA_HOME=$(update-alternatives --query java | grep 'Value: ' | grep -o '/.*/bin/java' | xargs dirname | xargs dirname)
+
 
 # Set JAVA_HOME in /etc/profile
-echo "export JAVA_HOME=$JAVA_PATH" | sudo tee -a /etc/profile
+echo "export JAVA_HOME=$JAVA_HOME" | sudo tee -a /etc/profile
 
 # Load the environment variables
 source /etc/profile
