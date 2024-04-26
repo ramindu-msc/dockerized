@@ -437,10 +437,10 @@ siddhi:
         properties:
           region.name: us
           other.region.name: asia
-          cassandra.host: 34.16.225.72
+          cassandra.host: 10.182.0.3
           cassandra.port: 9042
           cassandra.password: admin
-          cassandra.remoteLocal.host: 35.200.147.219
+          cassandra.remoteLocal.host: 10.160.0.4
           cassandra.remoteLocal.port: 9042
           cassandra.remoteLocal.password: admin
     -
