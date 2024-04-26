@@ -22,7 +22,7 @@ filebeat.inputs:
 -   type: log
     enabled: true
     paths:
-        - /usr/share/filebeat/mylog
+        - /usr/share/filebeat/mylog/carbon.log
     include_lines: ['(toELK)']
 
 # ============================== Filebeat modules ==============================
