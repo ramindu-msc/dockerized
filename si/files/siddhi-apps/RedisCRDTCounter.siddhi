@@ -9,7 +9,7 @@ define table ServerStatusTable (serverName int, started bool);
         topic.list='kafka_topic',
         threading.option='single.thread',
         group.id="group3",
-        bootstrap.servers='35.200.218.246:9092',
+        bootstrap.servers='10.160.0.2:9092',
         @map(type='json'))
 define stream SweetProductionStream (name string, amount double);
 
@@ -17,7 +17,7 @@ define stream SweetProductionStream (name string, amount double);
         topic.list='schedule',
         threading.option='single.thread',
         group.id="group3",
-        bootstrap.servers='35.200.218.246:9092',
+        bootstrap.servers='10.160.0.2:9092',
         @map(type='json'))
 define stream SchedulerStartThread (key string);
 
@@ -28,7 +28,7 @@ define stream TemperatureHumidityStream (name string, amount double);
 @sink(
     type='kafka',
     topic='schedule',
-    bootstrap.servers='34.16.213.1:9092',
+    bootstrap.servers='10.182.0.2:9092',
     @map(type='json'))
 define stream Scheduler_1_StartThread (key string);
 
